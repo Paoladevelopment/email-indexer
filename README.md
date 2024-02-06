@@ -1,4 +1,6 @@
 # Email indexer from the Enron database
+This repository contains two aplications: `enron-indexer` and `search-api`. The purpose of both is to allow searching information from enron database. 
+
 ## First steps
 - Download the latest version of ZincSearch from its [repository](https://github.com/zincsearch/zincsearch/releases) or run it with docker.
 - Download the Enron emails database [here](http://www.cs.cmu.edu/~enron/enron_mail_20110402.tgz)
@@ -8,8 +10,6 @@
 ZINC_FIRST_ADMIN_USER=admin ZINC_FIRST_ADMIN_PASSWORD=Complexpass#123 docker-compose up 
 ```
 _You can modify ZINC_FIRST_ADMIN_USER and ZINC_FIRST_ADMIN_PASSWORD with your own values_
-
-This repository contains two aplications: `enron-indexer` and `search-api`.
 
 ## Enron-indexer
 This app parses the raw files from the Enron Database and upload emails to a ZincZearch index.
