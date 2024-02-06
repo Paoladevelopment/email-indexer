@@ -25,4 +25,4 @@ export ZINC_FIRST_ADMIN_PASSWORD="Complexpass#123"
 export ZINC_SERVER_URL = "http://localhost:4080/api/"
 ./zincindexer
 ```
-_Remember that your ZincSearch server credentials must match with your environment credentials variable._
+_Remember that your environment credentials variables must match with your ZincSearch server credentials._
