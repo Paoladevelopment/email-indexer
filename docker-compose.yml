@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  zincsearch:
+    image: public.ecr.aws/zinclabs/zincsearch:latest
+    environment:
+      - ZINC_DATA_PATH=/data
+      - ZINC_FIRST_ADMIN_USER=${ZINC_FIRST_ADMIN_USER}
+      - ZINC_FIRST_ADMIN_PASSWORD=${ZINC_FIRST_ADMIN_PASSWORD}
+    volumes:
+      - ./zinc-volume:/data
+    ports:
+      - "4080:4080"
+    container_name: zincsearch
