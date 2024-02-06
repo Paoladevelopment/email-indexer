@@ -10,8 +10,7 @@ import (
 type envConfig struct {
 	ZincUser string
 	ZincPass string
-	ZincHost string
-	ZincPort string
+	ZincURL  string
 }
 
 var EnvVars envConfig
@@ -26,8 +25,7 @@ func loadEnvVars() envConfig {
 	return envConfig{
 		ZincUser: os.Getenv("ZINC_FIRST_ADMIN_USER"),
 		ZincPass: os.Getenv("ZINC_FIRST_ADMIN_PASSWORD"),
-		ZincHost: os.Getenv("ZINC_SERVER_ADDRESS"),
-		ZincPort: os.Getenv("ZINC_SERVER_PORT"),
+		ZincURL:  os.Getenv("ZINC_SERVER_URL"),
 	}
 }
 

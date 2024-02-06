@@ -16,7 +16,7 @@ func CreateIndex(index models.Index) {
 		return
 	}
 
-	requestURL := fmt.Sprintf("http://%s:%s/api/index", env.EnvVars.ZincHost, env.EnvVars.ZincPort)
+	requestURL := fmt.Sprintf("%s/index", env.EnvVars.ZincURL)
 
 	jsonBody, err := json.Marshal(index)
 	if err != nil {
@@ -42,7 +42,7 @@ func CreateIndex(index models.Index) {
 
 func isIndexCreated(index string) bool {
 
-	requestURL := fmt.Sprintf("http://%s:%s/api/index/%s", env.EnvVars.ZincHost, env.EnvVars.ZincPort, index)
+	requestURL := fmt.Sprintf("%s/index/%s", env.EnvVars.ZincURL, index)
 	req, err := makeZincRequest(http.MethodHead, requestURL, nil)
 	if err != nil {
 		log.Printf("Error creating the request: %s", err)
@@ -63,7 +63,7 @@ func isIndexCreated(index string) bool {
 }
 
 func SaveBulk(name string, emails []models.Email) {
-	requestURL := fmt.Sprintf("http://%s:%s/api/_bulkv2", env.EnvVars.ZincHost, env.EnvVars.ZincPort)
+	requestURL := fmt.Sprintf("%s/_bulkv2", env.EnvVars.ZincURL)
 	bulk := models.IndexBody{
 		IndexName: name,
 		Records:   emails,
