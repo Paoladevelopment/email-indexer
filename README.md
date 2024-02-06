@@ -17,11 +17,12 @@ go mod download
 go build -o zincindexer
 ```
 ### Environment variables
-Don't forget to include the following environment variables before running the `zincindexer` bash:
+Don't forget to include the following environment variables before running the `./zincindexer` command:
 
 ```bash
 export ZINC_FIRST_ADMIN_USER="admin"
 export ZINC_FIRST_ADMIN_PASSWORD="Complexpass#123"
 export ZINC_SERVER_URL = "http://localhost:4080/api/"
+./zincindexer
 ```
 _Remember that your ZincSearch server credentials must match with your environment credentials variable._
