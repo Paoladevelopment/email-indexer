@@ -22,7 +22,7 @@ Don't forget to include the following environment variables before running the `
 ```bash
 export ZINC_FIRST_ADMIN_USER="admin"
 export ZINC_FIRST_ADMIN_PASSWORD="Complexpass#123"
-export ZINC_SERVER_URL = "http://localhost:4080/api/"
+export ZINC_SERVER_URL="http://localhost:4080/api/"
 ./zincindexer
 ```
 _Remember that your environment credentials variables must match with your ZincSearch server credentials._
