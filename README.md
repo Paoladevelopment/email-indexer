@@ -4,7 +4,7 @@
 - Download the Enron emails database [here](http://www.cs.cmu.edu/~enron/enron_mail_20110402.tgz)
 This repository contains two aplications: `enron-indexer` and `search-api`.
 
-## enron-indexer
+## Enron-indexer
 This app parses the raw files from the Enron Database and upload emails to a ZincZearch index.
 
 ### Build
