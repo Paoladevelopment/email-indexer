@@ -7,7 +7,7 @@ This repository contains two aplications: `enron-indexer` and `search-api`.
 ## enron-indexer
 This app parses the raw files from the Enron Database and upload emails to a ZincZearch index.
 
-# Build
+### Build
 - Get dependencies
 ```bash
 go mod download
