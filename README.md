@@ -7,12 +7,21 @@ This repository contains two aplications: `enron-indexer` and `search-api`.
 ## enron-indexer
 This app parses the raw files from the Enron Database and upload emails to a ZincZearch index.
 
+# Build
+- Get dependencies
+```bash
+go mod download
+```
+- Build app
+```bash
+go build -o zincindexer
+```
 ### Environment variables
-Don't forget to include your `.env` file, which should contain the following environment variables:
+Don't forget to include the following environment variables before running the `zincindexer` bash:
 
 ```bash
-ZINC_FIRST_ADMIN_USER="admin"
-ZINC_FIRST_ADMIN_PASSWORD="Complexpass#123"
-ZINC_SERVER_URL = "http://localhost:4080/api/"
+export ZINC_FIRST_ADMIN_USER="admin"
+export ZINC_FIRST_ADMIN_PASSWORD="Complexpass#123"
+export ZINC_SERVER_URL = "http://localhost:4080/api/"
 ```
-
+_Remember that your ZincSearch server credentials must match with your environment credentials variable._
