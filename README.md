@@ -9,8 +9,8 @@ This repository contains two aplications: `enron-indexer` and `search-api`. The 
   email-indexer
   │
   ├── enron-indexer
-  │   ├── Place enron emails db here
-  │   │   └── (Folder for Enron emails database)
+  │   ├── Place enron emails folder db here
+  │   │   
   │   └── ... 
   ├── search-api
   │   └── ... 
