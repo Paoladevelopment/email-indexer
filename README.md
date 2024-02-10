@@ -61,7 +61,7 @@ go mod download
 go build -o api-search
 ```
 ### Environment variables
-Don't forget to include the following environment variables before running the `./zincindexer` command:
+Don't forget to include the following environment variables before running the `./api-search` command:
 
 ```bash
 export ZINC_FIRST_ADMIN_USER="admin"
@@ -70,4 +70,5 @@ export ZINC_SERVER_URL="http://localhost:4080/api"
 ./api-search
 ```
 _Remember that your environment credentials variables must match with your ZincSearch server credentials._
+
 _Server will be listening on port 8080_
