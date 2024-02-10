@@ -3,7 +3,21 @@ This repository contains two aplications: `enron-indexer` and `search-api`. The 
 
 ## First steps
 - Download the latest version of ZincSearch from its [repository](https://github.com/zincsearch/zincsearch/releases) or run it with docker.
-- Download the Enron emails database [here](http://www.cs.cmu.edu/~enron/enron_mail_20110402.tgz)
+- Download the Enron emails database [here](http://www.cs.cmu.edu/~enron/enron_mail_20110402.tgz).
+- Use a tool to extract the folder from the archive and move it here:
+  ```bash
+  email-indexer
+  │
+  ├── enron-indexer
+  │   ├── Place enron emails db here
+  │   │   └── (Folder for Enron emails database)
+  │   └── ... 
+  ├── search-api
+  │   └── ... 
+  ├── .gitignore
+  ├── docker-compose.yml
+  └── README.md
+  ```
 
 ### Run zincsearch using docker
 ```bash
