@@ -36,7 +36,7 @@ func SetUpRouter() *chi.Mux {
 		}
 	})
 
-	r.Get("/api/emails", handlers.SearchByPhrase)
+	r.Get("/api/search_emails", handlers.SearchByPhrase)
 
 	return r
 }
