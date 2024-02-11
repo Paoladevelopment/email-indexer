@@ -79,6 +79,8 @@ func (wp *WorkerPool) SubmitFile(filePath string) {
 }
 
 func (wp *WorkerPool) Close() {
+	close(wp.filePathQueue)
+	close(wp.resultChan)
 	if len(wp.emails) > 0 {
 		wp.sendBulk()
 	}
