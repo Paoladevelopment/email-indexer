@@ -118,6 +118,7 @@ func parseContent(file *os.File, offset int64) string {
 		}
 
 		contentBuilder.WriteString(row)
+		contentBuilder.WriteString("\n")
 	}
 
 	if err := scanner.Err(); err != nil {

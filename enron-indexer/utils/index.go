@@ -65,7 +65,7 @@ func (wp *WorkerPool) Start() {
 			} else {
 				wp.mu.Lock()
 				wp.emails = append(wp.emails, result.email)
-				if len(wp.emails) == 1000 {
+				if len(wp.emails) == 10000 {
 					wp.sendBulk()
 				}
 				wp.mu.Unlock()
@@ -79,8 +79,6 @@ func (wp *WorkerPool) SubmitFile(filePath string) {
 }
 
 func (wp *WorkerPool) Close() {
-	close(wp.filePathQueue)
-	close(wp.resultChan)
 	if len(wp.emails) > 0 {
 		wp.sendBulk()
 	}

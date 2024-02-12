@@ -1,0 +1,11 @@
+@import './base.css';
+
+@layer base {
+  html * {
+      box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+}

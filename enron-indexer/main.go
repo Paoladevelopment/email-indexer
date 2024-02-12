@@ -13,7 +13,7 @@ import (
 func main() {
 
 	// Start profiling
-	cpuFile, err := os.Create("indexer.pprof")
+	cpuFile, err := os.Create("indexer1.pprof")
 	if err != nil {
 		fmt.Printf("Ow, there was an error creating cpu profile file: %v\n", err)
 	}
@@ -33,7 +33,7 @@ func main() {
 
 	//Start memory profile
 
-	memFile, err := os.Create("mem_indexer.prof")
+	memFile, err := os.Create("mem_indexer1.prof")
 	if err != nil {
 		fmt.Printf("Ow, there was an error creating mem profile file: %v\n", err)
 	}

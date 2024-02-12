@@ -12,19 +12,19 @@ import (
 
 func SearchByPhrase(w http.ResponseWriter, r *http.Request) {
 	searchType := "matchphrase"
-	page := 0
-	resultsPerPage := 100
+	fromEmail := 0
+	maxEmails := 100
 	query := r.URL.Query()
 	term := query.Get("term")
 
-	err := ParseQueryParameterToInt(query, "page", &page)
+	err := ParseQueryParameterToInt(query, "from_email", &fromEmail)
 	if err != nil {
-		ResponseWithError(w, http.StatusBadRequest, `"page" parameter is invalid.`)
+		ResponseWithError(w, http.StatusBadRequest, `"from_email" parameter is invalid.`)
 	}
 
-	err = ParseQueryParameterToInt(query, "results_per_page", &resultsPerPage)
+	err = ParseQueryParameterToInt(query, "max_emails", &maxEmails)
 	if err != nil {
-		ResponseWithError(w, http.StatusBadRequest, `"results_per_page" parameter is invalid.`)
+		ResponseWithError(w, http.StatusBadRequest, `"max_emails" parameter is invalid.`)
 	}
 	if term == "" {
 		searchType = "alldocuments"
@@ -40,8 +40,8 @@ func SearchByPhrase(w http.ResponseWriter, r *http.Request) {
 			Field: "_all",
 		},
 		SortFields: []string{},
-		From:       uint(page),
-		MaxResults: uint(resultsPerPage),
+		From:       uint(fromEmail),
+		MaxResults: uint(maxEmails),
 		Source:     []string{},
 		Highlight: struct {
 			Fields map[string]interface{} "json:\"fields\""
