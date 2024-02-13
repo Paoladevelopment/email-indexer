@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import SearchComponent from '@/components/SearchComponent.vue';
+import { useEmailsStore } from '@/stores/emails';
 import { ref } from 'vue';
-const searchInput = ref<string>("")
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+const emailsStore = useEmailsStore()
+const searchInput = ref<string>(emailsStore.searchWord)
 
 const onSubmit = () => {
-    console.log(searchInput.value);
+    emailsStore.setSearchWord(searchInput.value)
+    router.push('/emails')
 }
 </script>
 

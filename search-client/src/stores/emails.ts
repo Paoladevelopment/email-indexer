@@ -23,6 +23,7 @@ export const useEmailsStore = defineStore('emails', () => {
     const totalPages = ref(0)
     const loading = ref<boolean>(false)
     const errorMsg = ref<string | null>(null)
+    const showHalfScreen = ref(false)
 
     async function FetchEmails(term:string, from_email:number, max_emails: number) {
         loading.value = true
@@ -62,5 +63,9 @@ export const useEmailsStore = defineStore('emails', () => {
         searchWord.value = word
     }
 
-    return {emails, totalPages, loading, errorMsg, FetchEmails, currentEmail, setCurrentEmail, searchWord, setSearchWord}
+    const setShowHalfScreen = (isShowed: boolean) => {
+        showHalfScreen.value = isShowed
+    }
+
+    return {emails, totalPages, loading, errorMsg, FetchEmails, currentEmail, setCurrentEmail, searchWord, setSearchWord, showHalfScreen, setShowHalfScreen}
 })
