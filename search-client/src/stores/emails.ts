@@ -13,7 +13,8 @@ interface IEmail {
     x_cc: string,
     bcc: string,
     x_bcc: string,
-    content: string
+    content: string,
+    highlight: string[]
 }
 
 export const useEmailsStore = defineStore('emails', () => {

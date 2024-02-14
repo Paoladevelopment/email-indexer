@@ -28,4 +28,7 @@ type EmailHit struct {
 	Source struct {
 		Email
 	} `json:"_source"`
+	Highlight struct {
+		Content []string `json:"content"`
+	} `json:"highlight"`
 }

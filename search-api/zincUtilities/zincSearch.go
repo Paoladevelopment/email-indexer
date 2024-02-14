@@ -10,7 +10,7 @@ import (
 )
 
 func SearchZinc(reqBody models.SearchZincRequest, indexName string) (models.SearchZincResponse, error) {
-	fmt.Println(config.EnvVars.ZincURL)
+
 	requestUrl := fmt.Sprintf("%s/%s/_search", config.EnvVars.ZincURL, indexName)
 
 	jsonBody, err := json.Marshal(reqBody)

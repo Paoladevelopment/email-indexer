@@ -85,7 +85,7 @@ func MapHitsToMails(zincResponse models.SearchZincResponse) []models.Email {
 			Bcc:       email.Source.Bcc,
 			XBcc:      email.Source.XBcc,
 			Content:   email.Source.Content,
-			Subemails: email.Source.Subemails,
+			Highlight: email.Highlight.Content,
 		})
 	}
 

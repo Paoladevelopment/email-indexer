@@ -4,7 +4,8 @@ defineProps<{
     from: string,
     to: string,
     subject: string,
-    content: string
+    content: string,
+    highlight?: string[]
 }>()
 
 </script>
@@ -16,6 +17,7 @@ defineProps<{
             <p class="truncate text-lg"><span class="font-medium">To:</span>{{ to }}</p>
         </div>
         <p class="truncate font-medium text-gray-900 mb-2">{{ subject }}</p>
-        <p class="truncate text-sm text-gray-500">{{ content }}</p>
+        <p v-if="highlight" class="truncate text-sm text-gray-500" v-html="highlight[0]"></p>
+        <p v-else class="truncate text-sm text-gray-500">{{ content }}</p>
     </div>
 </template>
