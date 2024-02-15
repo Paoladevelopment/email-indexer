@@ -12,3 +12,24 @@ services:
     ports:
       - "4080:4080"
     container_name: zincsearch
+  api:
+    build: 
+      context: ./search-api
+      args:
+        ZINC_FIRST_ADMIN_USER: $ZINC_FIRST_ADMIN_USER
+        ZINC_FIRST_ADMIN_PASSWORD: $ZINC_FIRST_ADMIN_PASSWORD
+        ZINC_SERVER_URL: $ZINC_SERVER_URL
+    ports:
+      - "8080:8080"
+    depends_on:
+      - zincsearch
+  
+  web:
+    build: 
+      context: ./search-client
+      args:
+        VITE_API_URL: $VITE_API_URL
+    ports:
+      - "80:8080"
+    depends_on:
+      - api
