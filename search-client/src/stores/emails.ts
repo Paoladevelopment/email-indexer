@@ -29,7 +29,7 @@ export const useEmailsStore = defineStore('emails', () => {
     async function FetchEmails(term:string, from_email:number, max_emails: number) {
         loading.value = true
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/search_emails?term=${term}&from_email=${from_email}&max_emails=${max_emails}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}:${import.meta.env.VITE_API_PORT}/api/search_emails?term=${term}&from_email=${from_email}&max_emails=${max_emails}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

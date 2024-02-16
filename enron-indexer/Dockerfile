@@ -32,7 +32,7 @@ ENV ZINC_FIRST_ADMIN_USER=${ZINC_FIRST_ADMIN_USER} \
 COPY . .
 
 # Build
-RUN go build -o search-api .
+RUN go build -o zincindexer .
 
 # Run
-CMD ["/app/search-api"]
+CMD ["/app/zincindexer"]

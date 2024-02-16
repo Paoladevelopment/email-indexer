@@ -15,8 +15,7 @@ services:
       args:
         ZINC_FIRST_ADMIN_USER: $ZINC_FIRST_ADMIN_USER
         ZINC_FIRST_ADMIN_PASSWORD: $ZINC_FIRST_ADMIN_PASSWORD
-    environment:
-      - ZINC_SERVER_URL: http://zinc-server:4080/api
+        ZINC_SERVER_URL: $ZINC_SERVER_URL
     ports:
       - "8080:8080"
     depends_on:
@@ -27,6 +26,7 @@ services:
       context: ./search-client
       args:
         VITE_API_URL: $VITE_API_URL
+        VITE_API_PORT: $VITE_API_PORT
     ports:
       - "80:8080"
     depends_on:
