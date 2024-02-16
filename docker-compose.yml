@@ -4,8 +4,8 @@ services:
   zincsearch:
     image: ./zinc-server
     environment:
-      - ZINC_FIRST_ADMIN_USER=${ZINC_FIRST_ADMIN_USER}
-      - ZINC_FIRST_ADMIN_PASSWORD=${ZINC_FIRST_ADMIN_PASSWORD}
+      - ZINC_FIRST_ADMIN_USER=padove
+      - ZINC_FIRST_ADMIN_PASSWORD=qwerty71
     ports:
       - "4080:4080"
     container_name: zincsearch
