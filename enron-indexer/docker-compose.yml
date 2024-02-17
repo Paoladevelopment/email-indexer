@@ -4,3 +4,8 @@ name: "zincindexer"
 services:
   api: 
     build: .
+    environment:
+      - ZINC_FIRST_ADMIN_USER=${ZINC_FIRST_ADMIN_USER}
+      - ZINC_FIRST_ADMIN_PASSWORD=${ZINC_FIRST_ADMIN_PASSWORD}
+      - ZINC_SERVER_URL=${ZINC_SERVER_URL}
+      - ENRON_URL=${ENRON_URL}
