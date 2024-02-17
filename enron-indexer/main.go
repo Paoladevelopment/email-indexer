@@ -5,6 +5,7 @@ import (
 	"os"
 	"runtime/pprof"
 
+	"github.com/Paoladevelopment/enron-indexer/env"
 	"github.com/Paoladevelopment/enron-indexer/models"
 	"github.com/Paoladevelopment/enron-indexer/utils"
 	zincutilities "github.com/Paoladevelopment/enron-indexer/zincUtilities"
@@ -27,8 +28,7 @@ func main() {
 
 	emailsIndex := models.NewEmailIndex()
 	zincutilities.CreateIndex(emailsIndex)
-	path := "./enron_mail_20110402"
-	utils.IndexEmails(path)
+	utils.IndexEmails(env.EnvVars.EnronUrl)
 	fmt.Println("Emails indexed!!")
 
 	//Start memory profile
