@@ -1,5 +1,6 @@
 # Email indexer from the Enron database
 This repository contains three aplications: `enron-indexer`,`search-api` and `search-client`. The purpose of the three is to allow searching information from enron database and visualize it. 
+[Enronsearch](http://ec2-18-219-218-197.us-east-2.compute.amazonaws.com)
 
 ## First steps
 - Download the latest version of ZincSearch from its [repository](https://github.com/zincsearch/zincsearch/releases) or run it with docker.
@@ -43,6 +44,12 @@ export ENRON_URL="./enron_mail_20110402" #where you place your enron database fo
 ```
 _Remember that your environment credentials variables must match with your ZincSearch server credentials._
 
+### Run with docker
+Write the same env variables showed above in a `.env` file (located in the root folder of enron-indexer) and run:
+```bash
+  docker compose up
+```
+
 ## Search-api
 Small API to facilitate searching for words within the Enron database of emails.
 
@@ -81,12 +88,12 @@ _Server will be listening on port 8080_
 
 ####Examples
 
--Retrieve the first 100 emails:
+- Retrieve the first 100 emails:
 ```http
   GET /api/search_emails
 ```
 
--Search emails containing the word "ice cream" starting from the 100th email and return 20 emails per page:
+- Search emails containing the word "ice cream" starting from the 100th email and return 20 emails per page:
 ```http
 GET /api/search_emails?term="word"&from_email=100&max_emails=20
 ```
@@ -95,7 +102,7 @@ Ensure to replace `http://localhost:8080` with your actual base URL when utilizi
 ## Search client
 A visualizer for the emails and to search emails based on user's input. Build with Vue 3 and Tailwind.
 ### Environment variables
-Create `.env` file and inclued:
+Create `.env` file and include:
 `VITE_API_URL=http://localhost`
 `VITE_API_PORT=8080`
 
@@ -104,7 +111,7 @@ Create `.env` file and inclued:
   npm install
 ```
 
-## Run locally, in development environment.
+### Run locally, in development environment.
 ```bash
   npm run dev
 ```
