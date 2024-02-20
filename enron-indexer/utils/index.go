@@ -65,7 +65,7 @@ func (wp *WorkerPool) Start() {
 			} else {
 				wp.mu.Lock()
 				wp.emails = append(wp.emails, result.email)
-				if len(wp.emails) == 10000 {
+				if len(wp.emails) == 100000 {
 					wp.sendBulk()
 				}
 				wp.mu.Unlock()
@@ -90,7 +90,7 @@ func (wp *WorkerPool) sendBulk() {
 }
 
 func IndexEmails(pathName string) {
-	workerPool := NewWorkerPool(1000, 1000)
+	workerPool := NewWorkerPool(500, 1000)
 	workerPool.Start()
 
 	root := filepath.Join(pathName, "maildir")
