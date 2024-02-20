@@ -109,11 +109,11 @@ onMounted(async () => {
                 <Icon icon="raphael:arrowright" width="24" height="24"/>
             </div>
         </div>
-        <section v-if="emailsStore.loading" class="w-95/100 h-4/5 mt-4 mx-auto bg-white rounded-md shadow-lg flex flex-col justify-center items-center gap-2">
+        <section v-if="emailsStore.loading" class="w-95/100 h-3/4 mt-4 mx-auto bg-white rounded-md shadow-lg flex flex-col justify-center items-center gap-2">
             <p class="text-center text-3xl font-medium">Loading emails...</p>
             <SpinnerComponent/>
         </section>
-        <section v-else :class="[{'grid grid-cols-2': showHalfScreen}, 'w-95/100 h-4/5 mt-4 mx-auto bg-white rounded-md shadow-lg overflow-hidden']">
+        <section v-else :class="[{'grid grid-cols-2': showHalfScreen}, 'w-95/100 h-3/4 mt-4 mx-auto bg-white rounded-md shadow-lg overflow-hidden']">
 
             <ul :class="[{'hidden': isNoResults}, 'h-full divide-y divide-gray-200 overflow-auto scrollbar-thin scrollbar-thumb-indigo-400 scrollbar-track-white scrollbar-thumb-rounded-md']">
                 <li v-for="email in emailsStore.emails" :key="email.message_id" class="py-4 p-2 cursor-pointer hover:bg-indigo-50" @click="goToDetails(email)">
