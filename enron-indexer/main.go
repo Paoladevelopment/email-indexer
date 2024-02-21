@@ -29,6 +29,7 @@ func main() {
 	emailsIndex := models.NewEmailIndex()
 	zincutilities.CreateIndex(emailsIndex)
 	utils.IndexEmails(env.EnvVars.EnronUrl)
+
 	fmt.Println("Emails indexed!!")
 
 	//Start memory profile
