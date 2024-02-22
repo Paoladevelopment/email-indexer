@@ -15,11 +15,3 @@ type Email struct {
 	Content   string   `json:"content"`
 	Highlight []string `json:"highlight"`
 }
-
-type SubEmail struct {
-	From    string `json:"from"`
-	Sent    string `json:"sent"`
-	To      string `json:"to"`
-	Subject string `json:"subject"`
-	Content string `json:"content"`
-}
