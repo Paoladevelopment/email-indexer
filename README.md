@@ -1,6 +1,6 @@
 # Email indexer from the Enron database
 This repository contains three aplications: `enron-indexer`,`search-api` and `search-client`. The purpose of the three is to allow searching information from enron database and visualize it. 
-[Enronsearch](http://ec2-18-219-218-197.us-east-2.compute.amazonaws.com)
+[Enronsearch](http://ec2-3-141-14-87.us-east-2.compute.amazonaws.com/)
 
 ## First steps
 - Download the latest version of ZincSearch from its [repository](https://github.com/zincsearch/zincsearch/releases) or run it with docker.
